@@ -41,3 +41,7 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+.vscode/
+src/app/data.service.spec.ts
+src/app/data.service.ts
+src/app/home/

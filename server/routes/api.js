@@ -49,10 +49,44 @@ router.get('/users', (req, res) => {
   });
 }); */
 
-const courses = ["A", "B", "C"] 
+const courses = ["A", "B", "C"];
+const students = [
+  {id: 1, name: "John"}, {id: 2, name: "Jane"}, {id: 3, name: "June"}, {id: 4, name: "Jacob"},
+  {id: 5, name: "Joey"}, {id: 6, name: "Johnny"}, {id: 7, name: "Jade"}, {id: 8, name: "Jason"},
+  {id: 9, name: "Jessica"}, {id: 10, name: "Jamie"}, {id: 11, name: "Jorah"}, {id: 12, name: "Jocelyn"},
+  {id: 13, name: "Jacob"}, {id: 14, name: "Jake"}];
+
+const profs = [{id:1, "name": "Alin Dobra"}, {id:2, "name": "Beverly Sanders"}, {id:3, "name": "Alper Ungor"}]  
+const profCourses = [{"id":1,
+                      "name": "Alin Dobra",
+                      "courses":
+                          ["COP5615: Distributed Operating Systems",
+                           "CEN5035: Software Engineering", 
+                           "CIS6930: Database Implementation"]}, 
+                     {"id": 2,
+                     "name": "Beverly Sanders",
+                     "courses":
+                          ["COP5556: Programming Language Principles",
+                            "CIS6930: Concurrent Programming"]}
+                    ];
+
+router.get('/students', (req, res) => {
+  res.json(students);
+});
+
+var getCourses = function (profName) {
+  var prof;
+  for (var index in profCourses){
+    prof = profCourses[index];
+    if (prof.name === profName)
+          return prof.courses;
+  };
+
+  return [];
+}
 
 router.get('/prof-courses', (req, res) => {
-  res.send(courses);
+  res.json( getCourses(req.query.prof));
 });
 
 module.exports = router;

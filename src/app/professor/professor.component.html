@@ -1,51 +1,25 @@
 <div class="wrapper">
 
   <div class="dashboard col-sm-9">
-    <div class="blocks">
-      <md-card class="course">
 
+    <div  *ngFor="let course of profCourses; let i = index" class="blocks" dnd-droppable="true" (onDropSuccess)="student=onItemDrop($event, i)">
+      <md-card class="md-course">
         <p class="course-name">
-          <a href="#"><b><u>COP5615: Distributed Operating Systems</u></b></a>
-        </p>
-
-        <md-card-actions class="icons">
-          <i class="material-icons">announcement</i>
-          <i class="material-icons">message</i>
-          <i class="material-icons">folder</i>
-        </md-card-actions>
-
-      </md-card>
-    </div>
-    <div class="blocks">
-      <md-card class="course">
-        <p class="course-name">
-          <a href="#"><b><u>CEN5035: Software Engineering</u></b></a>
-        </p>
-
-        <md-card-actions class="icons">
-          <i class="material-icons">announcement</i>
-          <i class="material-icons">message</i>
-          <i class="material-icons">folder</i>
-        </md-card-actions>
-      </md-card>
-    </div>
-    <div class="blocks" dnd-droppable="true" (onDropSuccess)="student=onItemDrop($event, 3)">
-      <md-card class="course">
-        <p class="course-name">
-          <a href="#"><b><u>CIS6930: Database Implementation</u></b></a>
+          <a href="#"><b><u>{{course}}</u></b></a>
         </p>
 
         <md-card-content fxLayout.sm="column" class="TA">
           <div class="TA-div">
             <p>Teaching Assistants:</p>
-            <md-list-item *ngFor="let student of c3_students">
+            <md-list-item *ngFor="let student of getTAs(i)">
               <md-card *ngIf="student" class="student-details" dnd-draggable [dragEnabled]="true" [dragData]="student">
                 <i class="material-icons">person</i>
                 <p>{{student.name}}</p>
                 <div fxFlex></div>
-                <i class="material-icons" (click)="removeTA(student , 3)">cancel</i>
+                <i class="material-icons" (click)="removeTA(student , i)">cancel</i>
               </md-card>
             </md-list-item>
+
           </div>
         </md-card-content>
 
