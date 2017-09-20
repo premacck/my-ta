@@ -11,7 +11,6 @@ import {DndModule, DragDropService, DragDropConfig} from "ng2-dnd";
 import { ProfessorComponent } from './professor/professor.component';
 import { LoginComponent } from './login/login.component';
 import { DataService } from './data.service';
-import { HomeComponent } from './home/home.component';
 
 export const ROUTES: Routes = [
   {path: 'login', component: LoginComponent},
@@ -22,8 +21,7 @@ export const ROUTES: Routes = [
   declarations: [
     AppComponent,
     ProfessorComponent,
-    LoginComponent,
-    HomeComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
