@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
 
-var connection  = mysql.createConnection({
+/* var connection  = mysql.createConnection({
     host: 'localhost',
     port: 8889,
     user: 'root',
@@ -16,7 +16,7 @@ var connection  = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
     console.log('You are now connected...')
-});
+}); */
 
 /* const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
