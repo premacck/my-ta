@@ -3,6 +3,21 @@
  */
 const express = require('express');
 const router = express.Router();
+const mysql = require('mysql');
+
+var connection  = mysql.createConnection({
+    host: 'localhost',
+    port: 8889,
+    user: 'root',
+    password: 'password',
+    database: 'ta_db'
+});
+
+connection.connect(function(err) {
+    if (err) throw err;
+    console.log('You are now connected...')
+});
+
 /* const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 
@@ -72,7 +87,7 @@ const profCourses = [{"id":1,
 
 router.get('/students', (req, res) => {
   res.json(students);
-});
+})
 
 var getCourses = function (profName) {
   var prof;
@@ -80,13 +95,13 @@ var getCourses = function (profName) {
     prof = profCourses[index];
     if (prof.name === profName)
           return prof.courses;
-  };
+  }
 
   return [];
-}
+};
 
 router.get('/prof-courses', (req, res) => {
   res.json( getCourses(req.query.prof));
-});
+})
 
 module.exports = router;

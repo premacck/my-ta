@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdIconModule, MdMenuModule } from '@angular/material';
 import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
@@ -30,9 +30,11 @@ export const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
     MdButtonModule,
     MdCardModule,
+    MdIconModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    DndModule.forRoot()
+    DndModule.forRoot(),
+    MdMenuModule
   ],
   providers: [DragDropService, DragDropConfig, DataService],
   bootstrap: [AppComponent]
