@@ -13,6 +13,6 @@ export class LoginComponent implements OnInit {
     ngOnInit() {}
     
     onLogin(user: string){
-      this.router.navigate(['/prof']);
+      this.router.navigate([user]);
     }
 }

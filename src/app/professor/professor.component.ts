@@ -38,7 +38,7 @@ export class ProfessorComponent implements OnInit {
 
     getColor(student: any) {
         if (this.droppedItems.indexOf(student) > -1)
-            return 'grey';
+            return '#757575';
         return 'white';
     }
 

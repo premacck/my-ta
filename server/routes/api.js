@@ -5,9 +5,10 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
 
-/* var connection  = mysql.createConnection({
+/*var connection  = mysql.createConnection({
     host: 'localhost',
-    port: 8889,
+    // port: 8889,
+    // socketPath: '/tmp/mysql.sock', // '/Applications/MAMP/tmp/mysql/mysql.sock',
     user: 'root',
     password: 'password',
     database: 'ta_db'
@@ -16,7 +17,7 @@ const mysql = require('mysql');
 connection.connect(function(err) {
     if (err) throw err;
     console.log('You are now connected...')
-}); */
+});*/
 
 /* const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
